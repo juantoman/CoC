@@ -1,0 +1,38 @@
+<template name="studentsPage">
+  <ol class="breadcrumb">
+    <li><a href="#">Class of Clans</a></li>
+    <li class="active">Students</li>
+  </ol>
+  <div class="row">
+    {{#each classe}}
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <a href="{{pathFor 'studentsPage'}}">
+            <img src="/images/user_128.png" alt="...">
+            <div class="caption">
+              <h2 class="text-center">
+                <button type="button" class="btn btn-primary">{{className}}</button>
+                </h2>
+            </div>
+          </a>
+        </div>
+      </div>
+    {{/each}}
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <a href="#">
+          <img src="/images/add_user_128.png" alt="...">
+          <div class="caption">
+            <h2 class="text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_class_modal">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Classe
+              </button>
+            </h2>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  {{> studentsModals}}
+</template>

@@ -3,15 +3,16 @@
     <li><a href="/">Class of Clans</a></li>
     <li class="active">{{className}}</li>
   </ol>
+  <h2 class="text-center bg-primary">{{className}}</h2>
   <ul class="nav nav-tabs nav-justified">
     <li role="presentation" class="active"><a href="#">Students</a></li>
     <li role="presentation"><a href="#">Behaviours</a></li>
-    <li role="presentation"><a href="#">Events</a></li>
+    <li role="presentation"><a href="/randomEventsPage">Events</a></li>
     <li role="presentation"><a href="#">Statistics</a></li>
   </ul>
   <div class="row">
     {{#each students}}
-      <div class="col-sm-6 col-md-3">
+      <div class="col-sm-12 col-md-3">
         <div class="thumbnail">
             <h2 class="text-center bg-primary">{{studentName}}</h2>
             <img src="/images/user_128.png" alt="...">
@@ -41,7 +42,7 @@
         </div>
       </div>
     {{/each}}
-    <div class="col-sm-6 col-md-3">
+    <div class="col-sm-12 col-md-3">
       <div class="thumbnail">
           <h2 class="text-center bg-success">Add student</h2>
           <img src="/images/add_user_128.png" alt="...">

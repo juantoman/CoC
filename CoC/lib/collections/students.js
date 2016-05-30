@@ -25,5 +25,8 @@ Meteor.methods({
     /*return {
       _id: classId
     };*/
+  },
+  studentDelete: function(studentId) {
+    var Id = students.remove({ _id: studentId });
   }
 });

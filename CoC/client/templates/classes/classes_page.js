@@ -5,9 +5,13 @@ Template.classesPage.helpers({
   }
 });
 Template.classesPage.events({
-  'click button': function(event) {
+  'click .btn-class': function(event) {
     event.preventDefault();
     Session.set('classId', event.target.id);
     Router.go('studentsPage');
+  },
+  'click .btn-delete': function(event) {
+    event.preventDefault();
+    Meteor.call('classDelete', event.target.name);
   }
 });

@@ -7,14 +7,16 @@
     {{#each classe}}
       <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
-          <a href="{{pathFor 'studentsPage'}}">
+          
             <img src="/images/user_group_128.png" alt="...">
             <div class="caption">
               <h2 class="text-center">
-                <button id="{{_id}}" type="button" class="btn btn-primary">{{className}}</button>
+                <a id="{{_id}}" href="{{pathFor 'studentsPage'}}">
+                  <button type="button" class="btn btn-primary">{{className}}</button>
+                </a>  
                 </h2>
             </div>
-          </a>
+          
         </div>
       </div>
     {{/each}}

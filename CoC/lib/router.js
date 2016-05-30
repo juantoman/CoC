@@ -8,13 +8,12 @@ Router.configure({
 
 //Router.route('/', {name: 'llistaAlumnes'});
 Router.route('/', {name: 'classesPage'});
-Router.route('/students', {name: 'studentsPage'});
-
-/*name: 'alumnePage',
-  data: function() { return Posts.findOne(this.params._id); }
+Router.route('/students/:_id', {
+  name: 'studentsPage',
+  data: function() { return students.findOne(this.params._id); }
 });
 
-Router.route('/submit', {name: 'alumneSubmit'});*/
+//Router.route('/submit', {name: 'alumneSubmit'});*/
 
 var requireLogin = function() {
   if (! Meteor.user()) {

@@ -8,10 +8,7 @@ Router.configure({
 
 //Router.route('/', {name: 'llistaAlumnes'});
 Router.route('/', {name: 'classesPage'});
-Router.route('/students/:_id', {
-  name: 'studentsPage',
-  data: function() { return students.findOne(this.params._id); }
-});
+Router.route('/students', {name: 'studentsPage'});
 
 //Router.route('/submit', {name: 'alumneSubmit'});*/
 

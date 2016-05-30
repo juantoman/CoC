@@ -8,6 +8,7 @@ Template.classesPage.events({
   'click .btn-class': function(event) {
     event.preventDefault();
     Session.set('classId', event.target.id);
+    Session.set('className', event.target.name);
     Router.go('studentsPage');
   },
   'click .btn-delete': function(event) {

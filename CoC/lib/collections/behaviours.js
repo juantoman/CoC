@@ -1,7 +1,7 @@
-students = new Mongo.Collection('students');
+behaviours = new Mongo.Collection('behaviours');
 
 Meteor.methods({
-  studentInsert: function(student) {
+  behaviourInsert: function(behaviour) {
     /*check(Meteor.userId(), String);
     check(classAttributes, {
       nom: String,
@@ -21,18 +21,12 @@ Meteor.methods({
       submitted: new Date()
     });*/
     //console.log(classe.className);
-    var studentId = students.insert(student);
+    var behaviourId = behaviours.insert(behaviour);
     /*return {
       _id: classId
     };*/
   },
-  studentDelete: function(studentId) {
-    var Id = students.remove({ _id: studentId });
-  },
-  studentXP: function(studentId,xp) {
-    var Id =  students.update({ _id: studentId }, { $inc: {XP: xp} });
-  },
-  studentHP: function(studentId,hp) {
-    var Id =  students.update({ _id: studentId }, { $inc: {HP: -hp} });
+  behaviourDelete: function(behaviourId) {
+    var Id = behaviours.remove({ _id: behaviourId });
   }
 });

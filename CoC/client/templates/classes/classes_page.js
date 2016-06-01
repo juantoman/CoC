@@ -9,6 +9,7 @@ Template.classesPage.events({
     event.preventDefault();
     Session.set('classId', event.target.id);
     Session.set('className', event.target.name);
+    Session.set('navItem', "Students");
     Router.go('studentsPage');
   },
   'click .btn-delete': function(event) {

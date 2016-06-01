@@ -1,11 +1,8 @@
 <template name="classesPage">
-  <ol class="breadcrumb">
-    <li><a href="#">Class of Clans</a></li>
-    <li class="active">Classes</li>
-  </ol>
+  {{> myBreadcrumb}}
   <div class="row">
     {{#each classe}}
-      <div class="col-sm-12 col-md-3">
+      <div class="col-xs-12 col-md-3">
         <div class="thumbnail">
             <h2 class="text-center bg-info">{{className}}</h2>
             <img src="/images/user_group_128.png" alt="...">
@@ -21,7 +18,7 @@
         </div>
       </div>
     {{/each}}
-    <div class="col-sm-12 col-md-3">
+    <div class="col-xs-12 col-md-3">
       <div class="thumbnail">
           <h2 class="text-center bg-success">Add class</h2>
           <img src="/images/user_group_128.png" alt="...">

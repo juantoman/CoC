@@ -1,18 +1,16 @@
-Template.myNav.helpers({
-  n(m) {
-    var navSelected = Session.get('navItem');
-    if ( m == navSelected ) {
-      return "active";
-    }else{
-      return "";
-    }
-  }
+Template.randomEventPage.helpers({
+  
 });
-Template.myNav.events({
+
+Template.randomEventPage.events({
   'click a': function(event) {
+    var e = randomEvents.find({classId: Session.get('classId')}).fetch();
+    var r = Math.floor(Math.random() * e.length);
+    t = e[r].eventDescription;
+    $("#ModalLabel").text(t);
     event.preventDefault();
     //event.target.parentNode.className="active";
-    Router.go(event.target.href)
+    //Router.go(event.target.href)
     Session.set('navItem',event.target.parentNode.id);
   }
 });

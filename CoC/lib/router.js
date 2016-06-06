@@ -9,7 +9,8 @@ Router.configure({
 //Router.route('/', {name: 'llistaAlumnes'});
 Router.route('/', {name: 'classesPage'});
 Router.route('/studentsPage', {name: 'studentsPage'});
-Router.route('/randomEventsPage', {name: 'randomEventsPage'});
+Router.route('/randomEventPage', {name: 'randomEventPage'});
+Router.route('/randomEventsList', {name: 'randomEventsList'});
 
 //Router.route('/submit', {name: 'alumneSubmit'});*/
 

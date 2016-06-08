@@ -23,6 +23,7 @@ Template.behavioursList.events({
       classId: Session.get('classId'),
       behaviourDescription: $(event.target).find('[name=behaviourDescription]').val(),
       positive: positiveBehaviour,
+      points: $(event.target).find('[name=behaviourPoints]').val(),
       createdOn: new Date()
     };
     Meteor.call('behaviourInsert', behaviour);
@@ -31,22 +32,31 @@ Template.behavioursList.events({
     event.preventDefault();
     if (event.currentTarget.value )
     {
-      console.log("Hola")
-      Meteor.call('behaviourUpdate', event.target.id, event.currentTarget.value);
+      if (event.target.id=="inputDesc")
+      {
+        Meteor.call('behaviourUpdateDesc', event.target.name, event.currentTarget.value);
+      } else {
+        Meteor.call('behaviourUpdatePoints', event.target.name, event.currentTarget.value);
+      }  
     } else {
-      Meteor.call('behaviourDelete',event.target.id);
+      Meteor.call('behaviourDelete',event.target.name);
     }
   },
   'click button': function(event) {
-    event.preventDefault();
+    //event.preventDefault();
     Session.set('behaviourButton', event.currentTarget.id);
     if (Session.get('behaviourButton') == "btn-positive")
     {
-      $("#btn-positive").addClass("btn-primary").removeClass("btn-default");
-      $("#btn-negative").addClass("btn-default").removeClass("btn-primary");
+      $("#btn-positive").addClass("btn-success").removeClass("btn-default");
+      $("#btn-negative").addClass("btn-default").removeClass("btn-danger");
+      $(".form-group").addClass("has-success").removeClass("has-error");
+      $("#btn-save").removeClass("btn-danger").addClass("btn-success");
     } else {
-      $("#btn-positive").addClass("btn-default").removeClass("btn-primary");
-      $("#btn-negative").addClass("btn-primary").removeClass("btn-default");
+      $("#btn-positive").addClass("btn-default").removeClass("btn-success");
+      $("#btn-negative").addClass("btn-danger").removeClass("btn-default");
+      $(".form-group").removeClass("has-success").addClass("has-error");
+      $("#btn-save").removeClass("btn-success").addClass("btn-danger");
+      
     }
   }  
 });

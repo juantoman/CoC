@@ -1,33 +1,39 @@
 <template name="behavioursList">
   {{> myBreadcrumb}}
   {{> myNav}}
+  <p class="text-center">
+    <button id="btn-positive" type="button" class="btn btn-success btn-lg">Positives</button>
+    <button id="btn-negative" type="button" class="btn btn-default btn-lg">Negatives</button>
+  </p>
   <div class="container">
-    <h2 class="text-center bg-info">Behaviours</h2>
-    <p class="text-center">
-      <button id="btn-positive" type="button" class="btn btn-primary btn-lg">Positives</button>
-      <button id="btn-negative" type="button" class="btn btn-default btn-lg">Negatives</button>
-    </p>
     <div class="list-group">
     {{#each behaviourList}}
-          <div class="form-group has-error has-feedback">
-            <div class="input-group">
-              <span class="input-group-addon"></span>
-              <input type="text" class="form-control inputGroup" id="{{_id}}" aria-describedby="inputGroupSuccess1Status" value="{{behaviourDescription}}">
+          <div class="form-group has-success has-feedback form-inline">
+            <div class="input-group col-xs-8">
+              <span class="input-group-addon">Description</span>
+              <input type="text" class="form-control inputGroup" name="{{_id}}" id="inputDesc" aria-describedby="inputGroupSuccess1Status" value="{{behaviourDescription}}">
             </div>
-            <span class="glyphicon glyphicon-cross form-control-feedback" aria-hidden="true"></span>
-            <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+            <div class="input-group col-xs-3">
+              <span class="input-group-addon">Points</span>
+              <input type="text" class="form-control inputGroup" name="{{_id}}" id="inputPoints"  aria-describedby="inputGroupSuccess1Status" value="{{points}}">
+            </div>
           </div>
     {{/each}}
     </div>
     <form>
       <div class="form-group has-success has-feedback">
         <label class="control-label" for="inputGroupSuccess1">New behaviour</label>
-        <div class="input-group">
-          <span class="input-group-addon">New</span>
-          <input type="text" class="form-control" name="behaviourDescription" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+        <div class="form-inline">
+          <div class="input-group col-xs-8">
+            <span class="input-group-addon">Description</span>
+            <input type="text" class="form-control" name="behaviourDescription" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+          </div>
+          <div class="input-group col-xs-3">
+            <span class="input-group-addon">Points</span>
+            <input type="text" class="form-control" name="behaviourPoints" id="inputPoints" aria-describedby="inputGroupSuccess1Status">
+          </div>
+          <input type="submit" id="btn-save" value="Save" class="btn btn-success">
         </div>
-        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-        <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
       </div>
     </form>
     

@@ -28,8 +28,7 @@ Meteor.methods({
   },
   randomEventDelete: function(eventId) {
     var Id = randomEvents.remove({ _id: eventId });
-  }
-  ,
+  },
   randomEventUpdate: function(eventId,eventDesc) {
     var Id = randomEvents.update({ _id: eventId }, { $set: { eventDescription: eventDesc } });
   }

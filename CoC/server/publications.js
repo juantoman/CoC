@@ -7,3 +7,6 @@ Meteor.publish('students', function() {
 Meteor.publish('randomEvents', function() {
   return randomEvents.find();
 });
+Meteor.publish('behaviours', function() {
+  return behaviours.find();
+});

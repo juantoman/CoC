@@ -1,6 +1,6 @@
 Template.randomEventsList.helpers({
   randomEvents: function() {
-    return randomEvents.find();
+    return randomEvents.find({classId: Session.get('classId')});
   }
 });
 
@@ -17,7 +17,7 @@ Template.randomEventsList.events({
   },
   'change .inputGroup': function(event) {
     event.preventDefault();
-    if (event.currentTarget.value != "" )
+    if (event.currentTarget.value )
     {
       Meteor.call('randomEventUpdate', event.target.id, event.currentTarget.value);
     } else {

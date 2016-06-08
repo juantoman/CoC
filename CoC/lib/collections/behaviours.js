@@ -28,5 +28,8 @@ Meteor.methods({
   },
   behaviourDelete: function(behaviourId) {
     var Id = behaviours.remove({ _id: behaviourId });
+  },
+  behaviourUpdate: function(behaviourId,behaviourDesc) {
+    var Id = behaviours.update({ _id: behaviourId }, { $set: { behaviourDescription: behaviourDesc } });
   }
 });

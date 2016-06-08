@@ -1,0 +1,35 @@
+<template name="behavioursList">
+  {{> myBreadcrumb}}
+  {{> myNav}}
+  <div class="container">
+    <h2 class="text-center bg-info">Behaviours</h2>
+    <p class="text-center">
+      <button type="button" class="btn btn-primary btn-lg">Positives</button>
+      <button type="button" class="btn btn-danger btn-lg">Negatives</button>
+    </p>
+    <div class="list-group">
+    {{#each behaviourList}}
+          <div class="form-group has-error has-feedback">
+            <div class="input-group">
+              <span class="input-group-addon"></span>
+              <input type="text" class="form-control inputGroup" id="{{_id}}" aria-describedby="inputGroupSuccess1Status" value="{{behaviourDescription}}">
+            </div>
+            <span class="glyphicon glyphicon-cross form-control-feedback" aria-hidden="true"></span>
+            <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+          </div>
+    {{/each}}
+    </div>
+    <form>
+      <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputGroupSuccess1">New behaviour</label>
+        <div class="input-group">
+          <span class="input-group-addon">New</span>
+          <input type="text" class="form-control" name="behaviourDescription" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+        </div>
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+      </div>
+    </form>
+    
+  </div>
+</template>

@@ -9,4 +9,6 @@ Meteor.publish('randomEvents', function() {
 });
 Meteor.publish('behaviours', function() {
   return behaviours.find();
+});Meteor.publish('behavioursLog', function() {
+  return behavioursLog.find();
 });

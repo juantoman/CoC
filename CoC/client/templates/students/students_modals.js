@@ -37,7 +37,6 @@ Template.studentsModals.events({
         classId: Session.get('classId'),
         student: Session.get('studentId'),
         behavior: i,
-        positive: false,
         comment: $("#commentHP").val(),
         createdOn: new Date()
       };
@@ -55,7 +54,6 @@ Template.studentsModals.events({
         classId: Session.get('classId'),
         student: Session.get('studentId'),
         behavior: i,
-        positive: true,
         comment: $("#commentXP").val(),
         createdOn: new Date()
       };

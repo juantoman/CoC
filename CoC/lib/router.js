@@ -12,6 +12,7 @@ Router.route('/studentsPage', {name: 'studentsPage'});
 Router.route('/randomEventPage', {name: 'randomEventPage'});
 Router.route('/randomEventsList', {name: 'randomEventsList'});
 Router.route('/behavioursList', {name: 'behavioursList'});
+Router.route('/statisticsPage', {name: 'statisticsPage'});
 
 //Router.route('/submit', {name: 'alumneSubmit'});*/
 

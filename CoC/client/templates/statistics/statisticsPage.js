@@ -2,8 +2,8 @@ Template.statisticsPage.helpers({
   statistics: function() {
     return behavioursLog.find({classId: Session.get('classId')});
   },
-  studentName: function(){
-    return students.findOne({_id: this.student}).studentName;
+  student: function(){
+    return students.findOne({_id: this.student});
     //return students.find({_id: this.student});
   },
   behaviour: function(){

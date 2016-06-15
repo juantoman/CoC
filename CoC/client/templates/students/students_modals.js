@@ -31,7 +31,7 @@ Template.studentsModals.events({
     event.preventDefault();
     $('#hp_modal').find(".list-group-item-danger").each( function() {
       i=this.id;
-      p=$(this).find(".badge").text();
+      p=parseInt($(this).find(".badge").text());
       var user = Meteor.user();
       var behaviour = {
         classId: Session.get('classId'),
@@ -41,6 +41,7 @@ Template.studentsModals.events({
         createdOn: new Date()
       };
       Meteor.call('behaviourLogInsert', behaviour);
+      Meteor.call('studentHP', Session.get('studentId'), p);
     });
     $('#hp_modal').modal('hide');
   },
@@ -48,7 +49,7 @@ Template.studentsModals.events({
     event.preventDefault();
     $('#xp_modal').find(".list-group-item-danger").each( function() {
       i=this.id;
-      p=$(this).find(".badge").text();
+      p=parseInt($(this).find(".badge").text());
       var user = Meteor.user();
       var behaviour = {
         classId: Session.get('classId'),
@@ -58,6 +59,8 @@ Template.studentsModals.events({
         createdOn: new Date()
       };
       Meteor.call('behaviourLogInsert', behaviour);
+      console.log(p);
+      Meteor.call('studentXP', Session.get('studentId'), p);
     });
     $('#xp_modal').modal('hide');
   }

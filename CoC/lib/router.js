@@ -3,7 +3,14 @@ Router.configure({
   loadingTemplate: 'loading',
   notFoundTemplate: 'notFound',
   waitOn: function() {
-    return Meteor.subscribe('classes'); }
+    return [
+      Meteor.subscribe('classes'),
+      Meteor.subscribe('students'),
+      Meteor.subscribe('randomEvents'),
+      Meteor.subscribe('behaviours'),
+      Meteor.subscribe('behavioursLog')
+      ]; 
+  }
 });
 
 //Router.route('/', {name: 'llistaAlumnes'});

@@ -7,6 +7,39 @@ Template.behavioursList.helpers({
       positiveBehaviour=false;
     }
     return behaviours.find({classId: Session.get('classId'), positive: positiveBehaviour });
+  },
+  btnSelected: function(positive) {
+    if (Session.get('behaviourButton') == "btn-positive")
+    {
+      if (positive) {
+        return "btn-success";
+      } else {
+        return "btn-default";
+      }
+      
+    } else {
+      if (positive) {
+        return "btn-default";
+      } else {
+        return "btn-danger";
+      }
+    }
+  },
+  fGreen: function() {
+    if (Session.get('behaviourButton') == "btn-positive")
+    {
+      return "has-success";
+    } else {
+      return "has-error"
+    }
+  },
+  bGreen: function() {
+    if (Session.get('behaviourButton') == "btn-positive")
+    {
+      return "btn-success";
+    } else {
+      return "btn-danger"
+    }
   }
 });
 
@@ -44,19 +77,14 @@ Template.behavioursList.events({
   },
   'click button': function(event) {
     //event.preventDefault();
-    Session.set('behaviourButton', event.currentTarget.id);
-    if (Session.get('behaviourButton') == "btn-positive")
+    Session.setPersistent('behaviourButton', event.currentTarget.id);
+    /*if (Session.get('behaviourButton') == "btn-positive")
     {
-      $("#btn-positive").addClass("btn-success").removeClass("btn-default");
-      $("#btn-negative").addClass("btn-default").removeClass("btn-danger");
       $(".form-group").addClass("has-success").removeClass("has-error");
       $("#btn-save").removeClass("btn-danger").addClass("btn-success");
     } else {
-      $("#btn-positive").addClass("btn-default").removeClass("btn-success");
-      $("#btn-negative").addClass("btn-danger").removeClass("btn-default");
       $(".form-group").removeClass("has-success").addClass("has-error");
       $("#btn-save").removeClass("btn-success").addClass("btn-danger");
-      
-    }
+    }*/
   }  
 });

@@ -7,9 +7,9 @@ Template.classesPage.helpers({
 Template.classesPage.events({
   'click .btn-class': function(event) {
     event.preventDefault();
-    Session.set('classId', event.target.id);
-    Session.set('className', event.target.name);
-    Session.set('navItem', "Students");
+    Session.setPersistent('classId', event.target.id);
+    Session.setPersistent('className', event.target.name);
+    Session.setPersistent('navItem', "Students");
     Router.go('studentsPage');
   },
   'click .btn-delete': function(event) {

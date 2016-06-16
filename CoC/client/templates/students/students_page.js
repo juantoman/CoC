@@ -13,12 +13,12 @@ Template.studentsPage.events({
   },
   'click .btn-xp': function(event) {
     event.preventDefault();
-    Session.set('studentId', event.target.name);
+    Session.setPersistent('studentId', event.target.name);
     //Meteor.call('studentXP', event.target.name, 100);
   },
   'click .btn-hp': function(event) {
     event.preventDefault();
-    Session.set('studentId', event.target.name);
+    Session.setPersistent('studentId', event.target.name);
     //Meteor.call('studentHP', event.target.name, 10);
   }
 });

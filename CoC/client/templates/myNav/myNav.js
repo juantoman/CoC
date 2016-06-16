@@ -13,6 +13,6 @@ Template.myNav.events({
     event.preventDefault();
     //event.target.parentNode.className="active";
     Router.go(event.target.href)
-    Session.set('navItem',event.target.parentNode.id);
+    Session.setPersistent('navItem',event.target.parentNode.id);
   }
 });

@@ -1,0 +1,22 @@
+<template name="studentsMainPage">
+  {{> myBreadcrumb}}
+  {{> myNav}}
+  
+  <div  class="container-fluid  myContent">
+    <h2 class="text-center"> {{className}} </h2>
+    <br>
+    <p class="text-center">
+      <button id="students" type="button" class="btn {{btnSelected "students"}} btn-lg">Students</button>
+      <button id="groups" type="button" class="btn {{btnSelected "groups"}} btn-lg">Groups</button>
+    </p>
+    <br>
+    {{#if studentsSelected}}
+      {{> studentsPage}}
+    {{else}}
+      {{> groupsPage}}
+    {{/if}}
+    
+    
+    {{> studentsModals}}
+  </div>
+</template>

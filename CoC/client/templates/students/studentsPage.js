@@ -1,9 +1,6 @@
 Template.studentsPage.helpers({
   students: function() {
     return students.find({classId: Session.get('classId')}, {sort: {createdOn: -1}});
-  },
-  className: function() {
-    return Session.get('className');
   }
 });
 Template.studentsPage.events({

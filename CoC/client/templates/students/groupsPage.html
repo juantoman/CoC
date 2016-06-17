@@ -1,6 +1,6 @@
 <template name="groupsPage">
   <div class="row">
-      {{#each students}}
+      {{#each groups}}
         <div class="col-xs-12 col-md-3">
           <div class="thumbnail">
               <h2 class="text-center bg-primary">{{groupName}}</h2>
@@ -37,7 +37,7 @@
             <img src="/images/add_user_128.png" alt="...">
             <div class="caption">
               <h2 class="text-center">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#add_student_modal">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#add_group_modal">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                   Group
                 </button>

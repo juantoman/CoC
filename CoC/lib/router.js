@@ -6,6 +6,7 @@ Router.configure({
     return [
       Meteor.subscribe('classes'),
       Meteor.subscribe('students'),
+      Meteor.subscribe('groups'),
       Meteor.subscribe('randomEvents'),
       Meteor.subscribe('behaviours'),
       Meteor.subscribe('behavioursLog')

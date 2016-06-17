@@ -8,7 +8,7 @@ Template.studentsModals.helpers({
 });
 
 Template.studentsModals.events({
-  'submit form': function(event) {
+  'submit form#add_student_form': function(event) {
     event.preventDefault();
     var user = Meteor.user();
     var student = {
@@ -18,6 +18,18 @@ Template.studentsModals.events({
     };
     Meteor.call('studentInsert', student);
     $('#add_student_modal').modal('hide');
+  },
+  'submit form#add_group_form': function(event) {
+    event.preventDefault();
+    var user = Meteor.user();
+    console.log("Hola");
+    var group = {
+      classId: Session.get('classId'),
+      groupName: $(event.target).find('[name=group-name]').val(),
+      createdOn: new Date()
+    };
+    Meteor.call('groupInsert', group);
+    $('#add_group_modal').modal('hide');
   },
   'click .list-group-item': function(event) {
     event.preventDefault();

@@ -3,11 +3,12 @@ Template.studentsMainPage.helpers({
     return Session.get('className');
   },
   btnSelected: function(option) {
-    if ( option == "students" && Session.get('socBtn') == "students" ) {return "btn-primary"; }
-    if ( option == "groups" && Session.get('socBtn') == "groups" ) {return "btn-primary"; }
+    if ( option == "students" && Session.get('sogBtn') == "students" ) {return "btn-primary"; }
+    if ( option == "groups" && Session.get('sogBtn') == "groups" ) {return "btn-primary"; }
   },
   studentsSelected: function() {
-    if ( Session.get('socBtn') == "students" ) {
+    console.log(Session.get('sogBtn'));
+    if ( Session.get('sogBtn') == "students" ) {
       return true;
     } else {
       return false;
@@ -16,8 +17,8 @@ Template.studentsMainPage.helpers({
 });
 
 Template.studentsMainPage.events({
-  'click .btn': function(event) {
+  'click .btn-sog': function(event) {
     event.preventDefault();
-    Session.setPersistent('socBtn', event.target.id);
+    Session.setPersistent('sogBtn', event.target.id);
   }
 });
